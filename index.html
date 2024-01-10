@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title></title>
+   <style>
+      *{
+         margin:0;
+         padding:0;
+         box-sizing:border-box;
+         outline:none;
+         text-decoration:none;
+         cursor: pointer;
+      }
+      body {
+         width:100%;
+         height:100vh;
+      }
+      html{
+         scroll-behavior: smooth;
+      }
+      
+      header {
+        
+         position: fixed;
+         top: 0;
+         left: 0;
+         width:100%;
+         padding: 20px;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         z-index: 100;
+         background-color: #eee;
+      }
+      
+      #logo {
+         font-size: 26px;
+         font-weight: bold;
+         text-decoration: none;
+      }
+      
+      nav {
+         display: flex;
+      }
+      
+      .nav-link {
+         margin-left: 10px;
+         padding: 8px 12px;
+         text-decoration: none;
+         color: #333;
+      }
+      
+      nav button {
+         margin-left: 10px;
+         margin-right:10px;
+         padding: 8px 12px;
+         border: none;
+         border-radius: 4px;
+         background-color: #007bff;
+         color: #fff;
+         cursor: pointer;
+      }
+      /*home section*/
+       #home {
+         background-color: #f7f7f7;
+         height: 100vh;
+         width:100%;
+         display: flex;
+         align-items: center;
+         justify-content:center;
+      }
+       
+      #home .container {
+         max-width: 1200px;
+         margin: 0 auto;
+         padding: 0 15px;
+      }
+       
+      #home .row {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+       
+      #home .col-md-6 {
+         padding: 0 15px;
+      }
+      
+      #home h1 {
+         font-size: 3rem;
+         margin-bottom: 1rem;
+      }
+      
+      #home p {
+         font-size: 1.5rem;
+         margin-bottom: 1.5rem;
+      }
+       
+      #home .btn {
+         font-size: 1.5rem;
+         padding: 1rem 2rem;
+      }
+      
+      #home .img-fluid {
+         max-width: 100%;
+         height: auto;
+      }
+      
+      /*about section*/
+      #about {
+         background-color: #f7f7f7;
+         padding: 100px 0;
+         height:100vh;
+         width:100%;
+      }
+      #about .container{
+         max-width: 1200px;
+         margin: 0 auto;
+         padding: 0 15px;
+         margin-top:80px;
+      }
+      
+      #about .col-md-6 {
+         padding: 0 15px;
+      }
+      #about h2 {
+         text-align:center;
+         font-size: 36px;
+         font-weight: 800;
+         margin-bottom: 30px;
+      }
+      
+      #about h3 {
+         font-size: 24px;
+         font-weight: 600;
+         margin-top: 40px;
+         margin-bottom: 20px;
+      }
+       
+      #about p {
+         font-size: 18px;
+         line-height: 30px;
+         margin-bottom: 40px;
+      }
+       
+      #about ul {
+         list-style: none;
+         padding: 0;
+         margin-bottom: 40px;
+      }
+       
+      #about li {
+      margin-bottom: 20px;
+      font-size:20px;
+      font-weight:bold;
+      }
+       
+      #about .bar {
+         display: block;
+         height: 10px;
+         border-radius: 5px;
+         overflow: hidden;
+         background-color: #ddd;
+         margin-bottom: 15px; 
+      }
+       
+      #about .bar span {
+         display: block;
+         height: 100%;
+      }
+       
+      #about .htmlcss {
+         width: 90%;
+         background-color: #ff6b6b;
+      }
+      
+      #about .javascript {
+         width: 80%;
+         background-color: #ffa931;
+      }
+       
+      #about .python {
+         width: 70%;
+         background-color: #3d3d3d;
+      }
+       
+      #about .sql {
+         width: 60%;
+         background-color: #4a89dc;
+      }
+       
+      #about .react {
+         width: 50%;
+         background-color: #00d8ff;
+      }
+      
+      #about button {
+         background-color: #4a89dc;
+         color: #fff;
+         padding: 10px 20px;
+         border: none;
+         border-radius: 5px;
+         font-size: 18px;
+         cursor: pointer;
+         transition: background-color 0.3s ease-in-out;
+      }
+       
+      button:hover {
+         background-color: #357bd8;
+      }
+      
+      #about img {
+         max-width: 100%;
+         width:100%;
+         height: auto;
+         margin-top:30px;
+      }
+  
+  
+/*contact*/
+      #contact {
+         background-color: #f7f7f7;
+         height: 100vh;
+         display: flex;
+         width:100%;
+         align-items: center;
+         justify-content:center;
+      }
+      form {
+         width: 70%;
+         margin: auto;
+         border: 1px solid #ccc;
+         padding: 60px 20px;
+         border-radius: 5px;
+         box-shadow: 0 0 10px #ccc;
+      }
+         
+      /* Style the form fields */
+      label {
+         display: block;
+         margin-bottom: 12px;
+         font-weight: 800;
+         font-size: 26px;
+      }
+         
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      textarea{
+         width: 100%;
+         height:60px; 
+         padding: 8px;
+         margin-bottom: 15px;
+         border: 2px solid #ccc;
+         border-radius: 5px;
+         box-sizing: border-box;
+         font-size:24px;
+      }
+      textarea{
+         height: 200px;
+      }
+      #messname,
+      #messphone,
+      #messemail,
+      #message{
+         display: block;
+         width: 100%;
+         margin-top: -8px;
+         font-size: 24px;
+         color: red;
+      }
+      /* Style the submit button */
+      input[type="submit"] {
+         background-color: #4CAF50;
+         color: #fff;
+         padding: 10px 20px;
+         border: none;
+         display: block;
+         width:100%;
+         height: 85px;
+         margin-top: 15px;
+         font-weight: 800;
+         border-radius: 5px;
+         font-size: 28px;
+         cursor: pointer;
+      }
+      #send {
+         display: block;
+         width: 100%;
+         margin-top: 22px;
+         margin-left: 130px;
+         font-size: 28px;
+         color: red;
+      }
+
+      input[type="submit"]:hover {
+         background-color: #3e8e41;
+      }
+      
+   </style>
+</head>
+
+<body>
+   <header>
+      <a href="#" id="logo">Logo</a>
+      <nav>
+         <a href="#home" class="nav-link">Home</a>
+         <a href="#about" class="nav-link">About Us</a>
+         <a href="#contact" class="nav-link">Contact</a>
+         <a href="#" class="nav-link">Services</a>
+         <button id="login-btn">Login</button>
+         <button id="signup-btn">Sign Up</button>
+      </nav>
+   </header>
+   
+   <section id="home">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-6">
+               <h1>Welcome to my website!</h1>
+               <p>My name is Aakash kashyap and I'm a web developer. I am Form Uatter Pradesh. I Did My Greduation in BCA in computer scince in the year of 2022. </p>
+               <button class="btn btn-primary">Learn more</button>
+            </div>
+            <div class="col-md-6">
+               <img src="https://placeimg.com/640/480/tech" alt="Image of computer" class="img-fluid" />
+            </div>
+         </div>
+      </div>
+   </section>
+   
+   <section id="about">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-6">
+               <h2>About Me</h2>
+               <p>Hi, I'm [your name] and I'm a [your profession]. I have [number of years] years of experience in [your field] and I'm passionate about [what you're passionate about].</p>
+               <h3>Skills</h3>
+               <ul>
+                  <li>HTML <span class="bar"><span class="htmlcss"></span></li>
+                  <li>CSS <span class="bar"><span class="javascript"></span></li>
+                  <li>javascript<span class="bar"><span class="python"></span></li>
+                  <li>C++ <span class="bar"><span class="sql"></span></li>
+                  <li>Core java <span class="bar"><span class="react"></span></li>
+               </ul>
+               <a href="https://www.google.om//"><button id="bnt">Download CV</button></a>
+               <div class="col-md-6">
+                  <img src="https://placeimg.com/640/480/tech">
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   
+   <section id="contact" >
+      <form onsubmit=" return validateForm()">
+       
+         <label for="name">Name:</label>
+         <input type="text" name="uname" id="uname" autocomplete="off" onkeyup="validateName()">
+         <span id="messname"></span>
+         <br>
+         
+         <label for="number">Phone:</label>
+         <input type="tel" name="phone" id="phone" autocomplete="off" onkeyup="validatePhone()" maxlength="10">
+         <span id="messphone"></span>
+         <br>
+         
+         <label for="email">Email:</label>
+         <input type="email" name="email" id="email" autocomplete="off" onkeyup="validateEmail()">
+         <span id="messemail"></span>
+         <br>
+         
+         <label for="message">Message:</label>
+         <textarea name="message" id="mess" autocomplete="off" onkeyup="validateMessage()"></textarea>
+         <span id="message"></span>
+         <br>
+         
+         <input type="submit" value="Send" >
+         <span id="send"></span>
+         
+      </form>
+   </section>
+   
+   <script>
+   
+      const loginBtn = document.getElementById('login-btn');
+      const signupBtn = document.getElementById('signup-btn');
+      
+      function handleLoginClick() {
+         // Add code to handle login button click
+         alert('Login button clicked');
+      }
+      
+      function handleSignupClick() {
+         // Add code to handle signup button click
+         alert('Signup button clicked');
+      
+      }
+      
+      loginBtn.addEventListener('click', handleLoginClick);
+      signupBtn.addEventListener('click', handleSignupClick);
+      //1111111111
+      
+      //333333
+      const downloadBtn = document.getElementById('bnt');
+      
+      downloadBtn.addEventListener('click', () => {
+         alert('cv');
+      });
+      
+      // name field validation
+      function validateName() {
+         
+         let error = document.getElementById("messname");
+         var correct_way = /^[A-Za-z]+\s{1}[A-Za-z]+$/;
+         const a = document.getElementById("uname").value.trim();
+         
+         if (a == "") {
+            let error = document.getElementById("messname");
+            error.innerHTML = "**Please The Name**";
+            return false;
+         }
+         if (a.length < 3) {
+            error.innerHTML = "**MiniMum 3 Charater**";
+            return false;
+         }
+         if (a.length > 20) {
+            error.innerHTML = "**MaxiMum 20 Charater**";
+            return false;
+         }
+         if (a.match(correct_way))
+            true;
+             else{
+            error.innerHTML = "**Only alfabets are allow**";
+            return false;
+         }
+         error.innerHTML = "";
+         return true;
+      }
+      
+      //phone field validation
+      function validatePhone(){
+         
+         let error = document.getElementById("messphone");
+         const p = document.getElementById("phone").value.trim();
+          
+         if (p == "") {
+            error.innerHTML = "**Please The Phone Number**";
+            return false;
+         }
+         if (isNaN(p)) {
+            error.innerHTML = "**Only Digits are allowed**";
+            return false;
+         }
+         if ((p.charAt(0) !=9) && (p.charAt(0) !=8) && (p.charAt(0) !=7)) {
+            error.innerHTML = "**Number must start 9 ,8 and 7**";
+            return false;
+         }
+         if (p.length !== 10) {
+            error.innerHTML = "**Number must be 10 digits **";
+            return false;
+         }
+         error.innerHTML = "";
+         return true;
+      }
+      
+      //email field validation
+      function validateEmail() {
+
+         let error = document.getElementById("messemail");
+         const e = document.getElementById("email").value.trim();
+
+         if (e == "") {
+            error.innerHTML = "**Please fill email id**";
+            return false;
+         }
+         if (e.indexOf('@')<=0) {
+            error.innerHTML = "**Invalid @ Position**";
+            return false;
+         }
+         if ((e.charAt(e.length-4)!='.') && (e.charAt(e.length-3)!='.')) {
+            error.innerHTML = "**Invalid . position**";
+            return false;
+         }
+         error.innerHTML = "";
+         return true;
+      }
+      
+      // Message field Validation
+      function validateMessage(){
+         
+         let mess = document.getElementById("mess").value.trim();
+         let error = document.getElementById("message");
+         let requrid = 30;
+         let left = requrid - mess.length;
+         
+         if(left > 0){
+            error.innerHTML = left + " more character required";
+            return false;
+         }
+         error.innerHTML = "";
+         return true;
+      }
+      
+      //form submit
+      function validateForm(){
+          let serror = document.getElementById("send");
+         
+         if(!validateName() || !validatePhone() || !validateEmail() || !validateMessage()){
+               serror.style.display = "block";
+               serror.innerHTML = "Plese Fix The Error To Submit";
+               setTimeout(function(){serror.style.display = "none";}, 3000);
+               return false;
+         }
+         alert('Sussesfully submit ');
+    
+      }
+      
+   </script>
+</body>
+
+</html>
